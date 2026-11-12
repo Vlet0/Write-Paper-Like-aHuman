@@ -44,18 +44,36 @@ Dự án này là sự kết hợp sâu sắc và nghiêm ngặt giữa ba trụ
 
 Tuyệt đối không viết văn xuôi khi chưa hoàn thành Bước 3.
 
-```mermaid
-flowchart TD
-    subgraph Row1 ["Giai đoạn 1: Định vị khoa học và Kiến trúc tự sự"]
-        direction LR
-        S0["<b>Bước 0: Tiếp nhận</b><br/>Form JSON / Tách nháp"] --> S1["<b>Bước 1: Định vị</b><br/>Claim, Tension, Insight"] --> S2["<b>Bước 2: Phân luồng</b><br/>8 Dạng bài L1–L8"] --> S3["<b>Bước 3: Hiệu chuẩn</b><br/>Ánh xạ bằng chứng"] --> S4["<b>Bước 4: Dàn ý diễn ngôn</b><br/>Cấu trúc 5 đoạn và Pivots"]
-    end
-    subgraph Row2 ["Giai đoạn 2: Soạn thảo, Khử dấu vết AI và Kiểm định"]
-        direction LR
-        S5["<b>Bước 5: Kho mẫu</b><br/>60 Bài báo Best Paper"] --> S5bc["<b>Bước 5b/c: Method và Figures</b><br/>Need-Mech-Prop / TikZ"] --> S6["<b>Bước 6: Khử dấu vết AI</b><br/>26 Tells và StoryScope"] --> S7["<b>Bước 7: Kiểm định</b><br/>check_draft.py tự động"] --> S8["<b>Bước 8: Bàn giao</b><br/>LaTeX CVPR + report.md"]
-    end
-    S4 --> S5
-```
+<p align="center">
+  <img src="assets/pipeline_vi.svg" alt="Quy trình khoa học 8 bước" width="100%">
+</p>
+
+<table align="center" width="100%">
+  <thead>
+    <tr style="background:#1e293b; color:#94a3b8;">
+      <th colspan="5" align="center"><b>GIAI ĐOẠN 1: ĐỊNH VỊ KHOA HỌC &amp; KIẾN TRÚC TỰ SỰ</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr align="center">
+      <td width="20%"><b>Bước 0: Tiếp nhận</b><br>Form JSON / Tách nháp</td>
+      <td width="20%"><b>Bước 1: Định vị</b><br>Claim, Tension, Insight</td>
+      <td width="20%"><b>Bước 2: Phân luồng</b><br>8 Dạng bài L1–L8</td>
+      <td width="20%"><b>Bước 3: Hiệu chuẩn</b><br>Ánh xạ bằng chứng</td>
+      <td width="20%"><b>Bước 4: Dàn ý</b><br>5 Đoạn văn &amp; Pivots</td>
+    </tr>
+    <tr style="background:#1e293b; color:#94a3b8;">
+      <th colspan="5" align="center"><b>GIAI ĐOẠN 2: SOẠN THẢO, KHỬ DẤU VẾT AI &amp; KIỂM ĐỊNH</b></th>
+    </tr>
+    <tr align="center">
+      <td width="20%"><b>Bước 5: Kho mẫu</b><br>60 Bài báo Best Paper</td>
+      <td width="20%"><b>Bước 5b/c: Method &amp; Hình</b><br>Need-Mech-Prop / TikZ</td>
+      <td width="20%"><b>Bước 6: Khử AI</b><br>26 Tells &amp; StoryScope</td>
+      <td width="20%"><b>Bước 7: Kiểm định</b><br>check_draft.py tự động</td>
+      <td width="20%"><b>Bước 8: Bàn giao</b><br>LaTeX CVPR + report</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Bước 0 — Tiếp Nhận Nghiên Cứu (Intake)
 - **Chế độ A: Điền Form có cấu trúc.** Sử dụng form tương tác cục bộ `assets/intake_form.html` (xuất JSON chuẩn `bestpaper-intake/v1`), chuyển đổi thành brief bằng:

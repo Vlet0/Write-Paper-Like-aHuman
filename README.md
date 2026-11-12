@@ -44,18 +44,36 @@ AI models (Claude, GPT, Gemini, DeepSeek, Kimi) consistently exhibit telltale di
 
 Do not write ungrounded prose before Step 4.
 
-```mermaid
-flowchart TD
-    subgraph Row1 ["Phase 1: Scientific Positioning and Narrative Architecture"]
-        direction LR
-        S0["<b>Step 0: Intake</b><br/>JSON Form / Reverse-Eng"] --> S1["<b>Step 1: Positioning</b><br/>Claim, Tension, Insight"] --> S2["<b>Step 2: Routing</b><br/>L1–L8 Paper Archetypes"] --> S3["<b>Step 3: Calibration</b><br/>Evidence-to-Claim Map"] --> S4["<b>Step 4: Skeleton</b><br/>Discourse Arc and Pivots"]
-    end
-    subgraph Row2 ["Phase 2: Exemplar Drafting, De-AI Scrubbing and Verification"]
-        direction LR
-        S5["<b>Step 5: Exemplars</b><br/>60 Award-Paper Moves"] --> S5bc["<b>Step 5b/c: Method and Figures</b><br/>Need-Mech-Prop / TikZ"] --> S6["<b>Step 6: De-AI Scrub</b><br/>26 Tells and StoryScope"] --> S7["<b>Step 7: Verification</b><br/>check_draft.py and Figures"] --> S8["<b>Step 8: Delivery</b><br/>CVPR LaTeX + report.md"]
-    end
-    S4 --> S5
-```
+<p align="center">
+  <img src="assets/pipeline.svg" alt="The 8-Step Scientific Pipeline" width="100%">
+</p>
+
+<table align="center" width="100%">
+  <thead>
+    <tr style="background:#1e293b; color:#94a3b8;">
+      <th colspan="5" align="center"><b>PHASE 1: SCIENTIFIC POSITIONING &amp; NARRATIVE ARCHITECTURE</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr align="center">
+      <td width="20%"><b>Step 0: Intake</b><br>JSON Form / Brief</td>
+      <td width="20%"><b>Step 1: Positioning</b><br>Claim, Tension, Insight</td>
+      <td width="20%"><b>Step 2: Routing</b><br>L1–L8 Archetypes</td>
+      <td width="20%"><b>Step 3: Calibration</b><br>Evidence Mapping</td>
+      <td width="20%"><b>Step 4: Skeleton</b><br>Discourse Arc &amp; Pivots</td>
+    </tr>
+    <tr style="background:#1e293b; color:#94a3b8;">
+      <th colspan="5" align="center"><b>PHASE 2: EXEMPLAR DRAFTING, DE-AI SCRUBBING &amp; VERIFICATION</b></th>
+    </tr>
+    <tr align="center">
+      <td width="20%"><b>Step 5: Exemplars</b><br>60 Award Papers</td>
+      <td width="20%"><b>Step 5b/c: Method &amp; Figs</b><br>Need-Mech-Prop / TikZ</td>
+      <td width="20%"><b>Step 6: De-AI Scrub</b><br>26 Tells &amp; StoryScope</td>
+      <td width="20%"><b>Step 7: Verification</b><br>check_draft.py suite</td>
+      <td width="20%"><b>Step 8: Delivery</b><br>CVPR LaTeX + report</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Step 0 — Research Intake & Briefing
 - **Mode A: Structured Intake Form.** Complete the local offline HTML form `assets/intake_form.html` (exports `bestpaper-intake/v1` JSON), then run:
