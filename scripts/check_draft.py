@@ -5,6 +5,7 @@ Style checks compare the draft with:
 1. The empirical distribution of 55 CVPR/ICCV/NeurIPS award papers (corpus_stats.json)
 2. The 26 anti-AI tell patterns from WikiProject AI Cleanup / Humanizer
 3. Discourse-level narrative and agency signatures from StoryScope (COLM 2026)
+4. Context-aware exemptions to prevent false positives in mathematics and physical terminology
 
 Levels:
   ERROR: Must fix before submission (hard rules, dashes, banned boilerplate, workflow traces)
@@ -12,10 +13,10 @@ Levels:
   NOTE:  Information and strategic recommendations
 
 Usage:
-  python3 scripts/check_draft.py FILE [FILE ...] [--max-words 60]
+  python3 scripts/check_draft.py FILE [FILE ...] [--max-words 60] [--triage]
 Exit code 1 if any ERROR is found.
 """
-import argparse, csv, json, re, sys
+import argparse, csv, json, re, statistics, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -45,14 +46,15 @@ ERROR_PHRASES = {
     r"unlock(s|ing)? the (full )?potential": "LLM tell ('unlock potential')",
     r"\bseamless(ly)?\b": "LLM tell ('seamless')",
     r"a myriad of": "LLM tell ('a myriad of')",
-    r"\blandscape\b": "LLM tell (metaphorical 'landscape')",
+    r"\blandscape\b": "LLM tell (metaphorical 'landscape'; valid only in loss/optimization landscape)",
     r"in the realm of": "LLM tell ('in the realm of')",
     r"\btapestry\b": "LLM tell (metaphorical 'tapestry')",
     r"it is worth noting that": "filler phrase",
     r"it can be seen that": "filler phrase",
     r"simple yet effective": "cliché phrase",
     r"comprehensive experiments": "boilerplate phrase",
-    r"\bthis proves\b": "experiments do not 'prove' (use demonstrates, indicates, shows)",
+    # Context-aware: experiments/evaluations do not 'prove' (mathematical theorems do!)
+    r"(?:experiments?|results?|benchmarks?|evaluations?|data)\s+(?:prove|proves)\b|\bthis proves\b": "empirical experiments do not 'prove' (use demonstrates, indicates, establishes)",
 
     # 3. Humanizer Specific Tells (§1, §2, §3, §4, §16, §18)
     r"\bnot merely\b.*?\bbut rather\b|\bnot just\b.*?\bbut also\b": "staged antithesis ('not just X but Y'; state point directly)",
@@ -126,6 +128,9 @@ COMPARE = r"\b(outperform\w*|surpass\w*|better than|improv\w+|reduc\w+|faster|hi
 
 # Trailing participle checker
 TRAILING_PARTICIPLE = re.compile(r",\s*(?:thereby\s+)?(making|enabling|unlocking|extending|allowing|bringing|yielding|demonstrating|highlighting|paving|opening|setting|underscoring|emphasizing|fostering|ensuring)\b[^.?!;]*[.?!;]?$", re.I)
+
+# Context-aware exemption for legitimate mathematical concepts
+VALID_LANDSCAPE = re.compile(r"\b(?:loss|optimization|energy|fitness|rugged|complex|surface)\s+landscape\b", re.I)
 
 BODY_SKIP = {
     "disclaimer (move to Limitations)", "limitation in abstract/introduction",
@@ -278,6 +283,8 @@ def check(path, bank, max_words=60):
         for pat, msg in ERROR_PHRASES.items():
             if body and msg in BODY_SKIP:
                 continue
+            if pat == r"\blandscape\b" and VALID_LANDSCAPE.search(s):
+                continue  # Exempt scientific concepts (e.g. loss landscape)
             if re.search(pat, s, flags=re.I):
                 issues.append(("ERROR", n, msg, s))
         for pat, msg in WARN_PHRASES.items():
@@ -314,11 +321,77 @@ def check(path, bank, max_words=60):
     return issues
 
 
+def triage(path):
+    """Emergency 3-minute triage audit for authors facing imminent deadlines."""
+    print(f"\n=======================================================")
+    print(f"🚨 EMERGENCY DEADLINE TRIAGE AUDIT: {Path(path).name}")
+    print(f"=======================================================")
+    lines, _ = load_lines(path)
+    sents = [s for s, _ in sentences(lines)]
+    words_per_sent = [len(s.split()) for s in sents if s]
+
+    # 1. Burstiness check
+    if len(words_per_sent) > 3:
+        mean_len = statistics.mean(words_per_sent)
+        std_len = statistics.stdev(words_per_sent)
+        burstiness_status = "✅ HEALTHY BURSTINESS" if std_len >= 9.0 else "⚠️ MONOTONOUS CADENCE (inject 5-10 word pivot sentences)"
+        print(f"Sentence Cadence: mean={mean_len:.1f} words, std={std_len:.1f} ({burstiness_status})")
+    
+    # 2. Fatal tells count
+    fatal_errors = []
+    text = "\n".join(lines)
+    for pat, desc in ERROR_PHRASES.items():
+        if pat == r"\blandscape\b":
+            # Check only non-exempted landscape
+            matches = [m for m in re.finditer(pat, text, flags=re.I) if not VALID_LANDSCAPE.search(text[max(0, m.start()-20):m.end()+20])]
+        else:
+            matches = list(re.finditer(pat, text, flags=re.I))
+        if matches:
+            fatal_errors.append((desc, len(matches)))
+
+    print(f"\n--- 1. Top Fatal AI Tells ({len(fatal_errors)} categories found) ---")
+    if not fatal_errors:
+        print("  ✅ Zero fatal AI tells detected!")
+    else:
+        for desc, cnt in fatal_errors[:6]:
+            print(f"  ❌ [{cnt}x] {desc}")
+
+    # 3. Dashes audit
+    dashes = len(re.findall(r"—|---|(\s–\s)|(\s--\s)", text))
+    print(f"\n--- 2. Hard No-Dash Rule Audit ---")
+    if dashes == 0:
+        print("  ✅ Clean: 0 em/en dashes found.")
+    else:
+        print(f"  ❌ CRITICAL: Found {dashes} dash(es)! Replace immediately with periods, colons, or parentheses.")
+
+    # 4. Numbers check
+    numbers = re.findall(NUMBER, text)
+    print(f"\n--- 3. Quantitative Evidence Audit ---")
+    print(f"  Numbers detected: {len(numbers)} numerical values across draft.")
+    if len(numbers) < 2:
+        print("  ⚠️ WARNING: Introduction has fewer than 2 numbers. Add at least 1 headline result delta!")
+    else:
+        print("  ✅ Evidence grounded with quantitative numbers.")
+
+    print(f"\n--- 4. Rapid Triage Action Plan ---")
+    print("  1. Search-and-replace all dashes ('—' -> '.' or ':').")
+    print("  2. Purge flagged AI tells: delve, pivotal, seamless, not-X-but-Y.")
+    print("  3. Insert 1-2 short punchy pivot sentences (5-10 words) at the gap and the core insight.")
+    print("  4. Verify that each main contribution mirrors an ablation table row.")
+    print(f"=======================================================\n")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Audit academic paper drafts against award-paper & humanizer standards.")
     ap.add_argument("files", nargs="+", help="Draft files (.tex, .md, .txt)")
     ap.add_argument("--max-words", type=int, default=60, help="Max sentence words warning threshold")
+    ap.add_argument("--triage", action="store_true", help="Run fast emergency triage audit for urgent deadlines")
     a = ap.parse_args()
+
+    if a.triage:
+        for f in a.files:
+            triage(f)
+        return 0
 
     bank = bank_ngrams()
     total_e = total_w = total_n = 0

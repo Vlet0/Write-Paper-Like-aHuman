@@ -11,6 +11,7 @@
       "name": "write-paper-like-a-human",
       "source": "./",
       "description": "Draft, rewrite, and audit high-impact academic papers combining best-paper narrative architecture with rigorous de-AI humanization.",
+      "version": "1.0.2",
       "license": "MIT",
       "keywords": [
         "writing",

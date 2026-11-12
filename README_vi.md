@@ -5,6 +5,7 @@
 
 **Kiến trúc bài báo khoa học đạt giải Best Paper kết hợp kỷ luật ngôn ngữ tự nhiên của con người**
 
+[![Version: 1.0.2](https://img.shields.io/badge/version-v1.0.2-blue.svg)](CHANGELOG.md)
 [![License: MIT & CC BY 4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC%20BY%204.0-blue.svg)](LICENSE)
 [![Corpus: 60 Award Papers](https://img.shields.io/badge/Corpus-60%20Award%20Papers-orange.svg)](PAPER_LIST.md)
 [![StoryScope COLM 2026](https://img.shields.io/badge/Grounding-StoryScope%20COLM%202026-purple.svg)](references/storyscope-discourse.md)
@@ -37,6 +38,39 @@ Dự án này là sự kết hợp sâu sắc và nghiêm ngặt giữa ba trụ
 - 🏛️ **Kiến trúc bài báo đỉnh cao (Best-Paper Architecture)**: Đúc kết từ phân tích từng câu chữ của **60 bài báo đoạt giải Best Paper tại CVPR, ICCV, NeurIPS (2021–2025)**. Định hình cách xây dựng động lực nghiên cứu sắc bén, hiệu chuẩn luận điểm (Claim Calibration), ánh xạ bằng chứng (Evidence Map), phân loại 8 dạng bài báo (L1–L8), và quy hoạch hình ảnh (Figure 1 typology, TikZ vector).
 - 🧹 **Bộ 26 quy tắc khử dấu vết AI (The 26 Anti-AI Tell Patterns)**: Kế thừa từ bộ quy tắc WikiProject AI Cleanup của Wikipedia và dự án `humanizer` (v4.0.0), loại bỏ triệt để các cấu trúc AI đặc trưng: *Not X but Y*, slogan kết bài, triệt tiêu gạch ngang (`—`), gọt giũa từ ngữ sáo rỗng (`delve`, `pivotal`, `seamless`, `landscape`, `tapestry`).
 - 🔬 **Kỷ luật diễn ngôn StoryScope (COLM 2026)**: Tái lập tính chân thực khoa học, chủ thể vận hành cơ học rõ ràng, tôn trọng sự va chạm kỹ thuật thực tế, và tạo nhịp điệu câu văn đa dạng (burstiness).
+
+---
+
+---
+
+## 🚀 Điểm Mới Nổi Bật Ở Bản V1.0.2 (Chống Rập Khuôn & Đa Dạng Giọng Văn)
+
+Phiên bản `v1.0.2` phá bỏ hoàn toàn cái bẫy "100 bài như 1" (chống rập khuôn mẫu) và bổ sung chế độ cấp cứu khẩn cấp cho deadline:
+
+### 1. Phá Vỡ Rập Khuôn (4 Lập Trường Tu Từ Đa Dạng - Anti-Meta-Clustering)
+Việc ép mọi bài báo vào cùng một bộ khung dẫn đến hiện tượng bài nào cũng giống bài nào. Bản v1.0.2 giới thiệu **4 Lập trường Tu từ (4 Rhetorical Stances)** và **3 Nhân dạng Tác giả (3 Authorial Personas)** trong `references/diversity-and-voice.md`:
+- **The Empirical Conflict Stance (Dữ liệu thực nghiệm đi trước)**: Khởi đầu bằng một hiện tượng đo đạc bất thường hoặc sự sụp đổ của giả định cũ trước dữ liệu thực tế. Phù hợp cho bài phát hiện lỗi, đo đạc, benchmark mới.
+- **The Theoretical Paradox Stance (Nguyên lý lý thuyết đi trước)**: Khởi đầu bằng sự phức tạp của công thức cũ và giải quyết bằng định lý tương đương giải tích (*analytical equivalence*). Phù hợp cho bài toán tối ưu, reparameterization (như DPO).
+- **The Systems Pragmatism Stance (Ràng buộc hệ thống & phần cứng)**: Khởi đầu bằng nút thắt cổ chai phần cứng (tràn VRAM, trễ suy luận) và chứng minh sự vượt trội trên đường cong Pareto hiệu năng/tốc độ. Phù hợp cho mô hình thời gian thực, nén mô hình.
+- **The Historical Linchpin Stance (Tiến trình lịch sử & Mắt xích còn thiếu)**: Khái quát 3 giai đoạn tiến hóa của phân ngành và chỉ ra đúng mắt xích còn khuyết để thống nhất các phương pháp. Phù hợp cho mô hình nền tảng đa nhiệm.
+- **3 Nhân dạng tác giả**: Giọng văn chuyên biệt cho *Nhà lý thuyết (The Theorist)*, *Nhà quan sát thực nghiệm (The Naturalist)*, và *Kiến trúc sư hệ thống (The Systems Architect)*.
+
+### 2. Hai Chế Độ Vận Hành: Kiến Trúc Sư vs. Cấp Cứu Deadline (`--triage`)
+- **Chế độ Kiến trúc sư (Gear 1)**: Quy trình chuẩn 8 bước sâu sắc để xây dựng bài báo từ đầu.
+- **Chế độ Cấp cứu khẩn cấp (Gear 2)**: Khi chỉ còn <24–48 giờ trước giờ nộp bài (*deadline panic*):
+  ```bash
+  python scripts/check_draft.py --triage draft_intro.tex
+  ```
+  Quét nhanh trong 3 phút: thanh trừng các tử huyệt AI (`delve`, `pivotal`, `seamless`, gạch ngang `—`), đo độ đa dạng nhịp điệu câu ($\sigma_{\text{length}}$), kiểm tra số liệu định lượng, và xuất kế hoạch sửa nhanh 4 bước.
+
+### 3. Miễn Trừ Dương Tính Giả Cho Thuật Ngữ Toán Học & Khoa Học
+Nâng cấp bộ nhận diện regex trong `check_draft.py` để phân biệt ngữ cảnh:
+- Cho phép sử dụng từ `landscape` trong các khái niệm khoa học chuẩn xác (*loss landscape*, *optimization landscape*, *energy landscape*, *fitness landscape*).
+- Cho phép dùng từ *prove/proof* trong chứng minh định lý toán học (*Mathematical Theorems*) mà không bị phạt nhầm.
+
+### 4. Đấu Tranh Giả Định Trong Related Work & Kịch Bản Phản Biện (Rebuttal)
+- **Related Work** (`references/related-work.md`): Cấu trúc phần nghiên cứu liên quan thành một "Cuộc chiến của các giả định kỹ thuật" (*Battle of Assumptions*) thay vì liệt kê theo thứ tự thời gian buồn ngủ.
+- **Kịch bản Rebuttal** (`references/rebuttal.md`): Giao thức phản biện reviewer sắc bén, đi thẳng vào câu trả lời và số liệu thực nghiệm ngay từ dòng đầu tiên, không nịnh bợ hay xin xỏ rỗng tuếch.
 
 ---
 

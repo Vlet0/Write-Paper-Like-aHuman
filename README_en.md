@@ -5,6 +5,7 @@
 
 **Persuade reviewers by combining award-winning academic narrative structure with authentic human voice and discourse discipline**
 
+[![Version: 1.0.2](https://img.shields.io/badge/version-v1.0.2-blue.svg)](CHANGELOG.md)
 [![License: MIT & CC BY 4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC%20BY%204.0-blue.svg)](LICENSE)
 [![Corpus: 60 Award Papers](https://img.shields.io/badge/Corpus-60%20Award%20Papers-orange.svg)](PAPER_LIST.md)
 [![StoryScope COLM 2026](https://img.shields.io/badge/Grounding-StoryScope%20COLM%202026-purple.svg)](references/storyscope-discourse.md)
@@ -37,6 +38,39 @@ AI models (Claude, GPT, Gemini, DeepSeek, Kimi) consistently exhibit telltale di
 - 🏛️ **Best-Paper Architecture**: Distilled from sentence-by-sentence analysis of **60 CVPR, ICCV, and NeurIPS award papers (2021–2025)**. Provides sharp motivation, 8 paper archetypes (L1–L8), strict claim-to-evidence calibration, and vector figure planning (Figure 1 typology, TikZ).
 - 🧹 **26 Anti-AI Tell Patterns**: Derived from WikiProject AI Cleanup and `humanizer` (v4.0.0), eradicating *Not X but Y* staging, dramatic slogan closers, universal dashes, and AI vocabulary (`delve`, `pivotal`, `seamless`, `landscape`, `tapestry`, `bolstered`).
 - 🔬 **StoryScope Discourse Discipline (COLM 2026)**: Restores authentic scientific agency, operational causal attribution, technical friction, and dynamic sentence burstiness ($\sigma_{\text{length}} \ge 9.5$).
+
+---
+
+---
+
+## 🚀 What's New in v1.0.2 (Anti-Clustering & Voice Diversification)
+
+Version `1.0.2` eliminates the "100 papers like one" template trap and equips authors with rapid deadline auditing tools:
+
+### 1. Anti-Meta-Clustering (The 4 Rhetorical Stances)
+Rigid templates produce a new kind of synthetic sameness. v1.0.2 introduces **Rhetorical Stance Diversification** (`references/diversity-and-voice.md`), allowing papers to adopt the structure that naturally fits the discovery:
+- **The Empirical Conflict Stance (Data-First)**: Opens with an unexpected measurement or failure of standard models under real-world shifts.
+- **The Theoretical Paradox Stance (Principle-First)**: Opens with formulation bloat and resolves it through analytical equivalence theorems.
+- **The Systems Pragmatism Stance (Constraint-First)**: Opens with hardware bottlenecks (VRAM, latency cliffs) and establishes Pareto efficiency.
+- **The Historical Linchpin Stance (Lineage-First)**: Traces the macro-evolution of the subfield across three distinct eras, isolating the missing linchpin.
+- **3 Authorial Personas**: Calibrated voices for *The Theorist*, *The Naturalist*, and *The Systems Architect*.
+
+### 2. Dual Operational Gears: Architect vs. Emergency Triage Mode
+- **Architect Mode (Gear 1)**: The standard deep 8-step pipeline for building a manuscript from scratch.
+- **Emergency Triage Mode (Gear 2)**: For panic situations with <24–48 hours until deadline:
+  ```bash
+  python scripts/check_draft.py --triage draft_intro.tex
+  ```
+  Runs an instant 3-minute diagnostic: flags fatal AI tells (`delve`, `pivotal`, `seamless`), audits sentence cadence/burstiness ($\sigma_{\text{length}}$), checks numerical groundings, and generates a 4-step rapid action plan.
+
+### 3. Context-Aware Mathematical False-Positive Exemptions
+Upgraded regex engines in `check_draft.py` to recognize legitimate technical terminology:
+- Allows valid physical and mathematical uses of `landscape` (e.g., *loss landscape*, *optimization landscape*, *energy landscape*, *fitness landscape*).
+- Allows theoretical theorem proofs to use *prove/proof* without false flagging.
+
+### 4. Battle of Assumptions & Rebuttal Readiness
+- **Related Work** (`references/related-work.md`): Dissects prior work by conflicting core assumptions rather than flat chronological summaries.
+- **Rebuttal Defense** (`references/rebuttal.md`): Direct, evidence-first peer-review response protocols without groveling apologies or empty rhetoric.
 
 ---
 
