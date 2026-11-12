@@ -5,7 +5,6 @@
 
 **Persuade reviewers by combining award-winning academic narrative structure with authentic human voice and discourse discipline**
 
-[![Version: 1.0.2](https://img.shields.io/badge/version-v1.0.2-blue.svg)](CHANGELOG.md)
 [![License: MIT & CC BY 4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC%20BY%204.0-blue.svg)](LICENSE)
 [![Corpus: 60 Award Papers](https://img.shields.io/badge/Corpus-60%20Award%20Papers-orange.svg)](PAPER_LIST.md)
 [![StoryScope COLM 2026](https://img.shields.io/badge/Grounding-StoryScope%20COLM%202026-purple.svg)](references/storyscope-discourse.md)
@@ -43,34 +42,37 @@ AI models (Claude, GPT, Gemini, DeepSeek, Kimi) consistently exhibit telltale di
 
 ---
 
-## 🚀 What's New in v1.0.2 (Anti-Clustering & Voice Diversification)
+## 🎭 Anti-Meta-Clustering: Rhetorical Stances & Voice Diversification
 
-Version `1.0.2` eliminates the "100 papers like one" template trap and equips authors with rapid deadline auditing tools:
+To eliminate the "100 papers like one" template trap, `Write-Paper-Like-a-Human` strictly rejects rigid, one-size-fits-all skeletons. Instead, papers adopt the natural rhetorical stance matching the discovery (`references/diversity-and-voice.md`):
 
-### 1. Anti-Meta-Clustering (The 4 Rhetorical Stances)
-Rigid templates produce a new kind of synthetic sameness. v1.0.2 introduces **Rhetorical Stance Diversification** (`references/diversity-and-voice.md`), allowing papers to adopt the structure that naturally fits the discovery:
-- **The Empirical Conflict Stance (Data-First)**: Opens with an unexpected measurement or failure of standard models under real-world shifts.
-- **The Theoretical Paradox Stance (Principle-First)**: Opens with formulation bloat and resolves it through analytical equivalence theorems.
-- **The Systems Pragmatism Stance (Constraint-First)**: Opens with hardware bottlenecks (VRAM, latency cliffs) and establishes Pareto efficiency.
-- **The Historical Linchpin Stance (Lineage-First)**: Traces the macro-evolution of the subfield across three distinct eras, isolating the missing linchpin.
-- **3 Authorial Personas**: Calibrated voices for *The Theorist*, *The Naturalist*, and *The Systems Architect*.
+1. **The Empirical Conflict Stance (Data-First)**:
+   - *Best for*: Unexpected experimental phenomena, distribution shifts, failure discoveries, benchmarks.
+   - *Architecture*: Opens with the counter-intuitive measurement; reveals why standard assumptions fail on real data.
+2. **The Theoretical Paradox Stance (Principle-First)**:
+   - *Best for*: Theory-backed methods, loss reparameterization, closed-form simplifications.
+   - *Architecture*: Opens with formulation bloat; establishes an analytical equivalence theorem that collapses complexity.
+3. **The Systems Pragmatism Stance (Constraint-First)**:
+   - *Best for*: Real-time inference, high-throughput models, memory-efficient architectures.
+   - *Architecture*: Opens with hardware bottlenecks (VRAM saturation, latency cliffs); demonstrates Pareto speed-accuracy dominance.
+4. **The Historical Linchpin Stance (Lineage-First)**:
+   - *Best for*: Unified foundation models, multi-task architectures.
+   - *Architecture*: Traces the macro-evolution of the subfield across three distinct eras, isolating the missing linchpin.
 
-### 2. Dual Operational Gears: Architect vs. Emergency Triage Mode
-- **Architect Mode (Gear 1)**: The standard deep 8-step pipeline for building a manuscript from scratch.
-- **Emergency Triage Mode (Gear 2)**: For panic situations with <24–48 hours until deadline:
+Along with **3 Authorial Personas** (*The Theorist*, *The Naturalist*, *The Systems Architect*) that adapt vocabulary, syntax, and sentence cadence.
+
+---
+
+## ⚙️ Dual Operational Gears: Architect vs. Emergency Triage
+
+Depending on your submission timeline, select the appropriate operational mode:
+
+- **Gear 1: Architect Mode (Full 8-Step Pipeline)**: Deep end-to-end manuscript construction from intake to final camera-ready LaTeX.
+- **Gear 2: Emergency Triage Mode (`--triage`)**: For authors facing imminent conference deadlines (<24–48 hours) with an existing draft:
   ```bash
   python scripts/check_draft.py --triage draft_intro.tex
   ```
-  Runs an instant 3-minute diagnostic: flags fatal AI tells (`delve`, `pivotal`, `seamless`), audits sentence cadence/burstiness ($\sigma_{\text{length}}$), checks numerical groundings, and generates a 4-step rapid action plan.
-
-### 3. Context-Aware Mathematical False-Positive Exemptions
-Upgraded regex engines in `check_draft.py` to recognize legitimate technical terminology:
-- Allows valid physical and mathematical uses of `landscape` (e.g., *loss landscape*, *optimization landscape*, *energy landscape*, *fitness landscape*).
-- Allows theoretical theorem proofs to use *prove/proof* without false flagging.
-
-### 4. Battle of Assumptions & Rebuttal Readiness
-- **Related Work** (`references/related-work.md`): Dissects prior work by conflicting core assumptions rather than flat chronological summaries.
-- **Rebuttal Defense** (`references/rebuttal.md`): Direct, evidence-first peer-review response protocols without groveling apologies or empty rhetoric.
+  Runs an instant 3-minute diagnostic: flags fatal AI tells (`delve`, `pivotal`, `seamless`), audits sentence burstiness ($\sigma_{\text{length}}$), checks numerical groundings, and generates a 4-step rapid action plan.
 
 ---
 

@@ -5,7 +5,6 @@
 
 **Kiến trúc bài báo khoa học đạt giải Best Paper kết hợp kỷ luật ngôn ngữ tự nhiên của con người**
 
-[![Version: 1.0.2](https://img.shields.io/badge/version-v1.0.2-blue.svg)](CHANGELOG.md)
 [![License: MIT & CC BY 4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC%20BY%204.0-blue.svg)](LICENSE)
 [![Corpus: 60 Award Papers](https://img.shields.io/badge/Corpus-60%20Award%20Papers-orange.svg)](PAPER_LIST.md)
 [![StoryScope COLM 2026](https://img.shields.io/badge/Grounding-StoryScope%20COLM%202026-purple.svg)](references/storyscope-discourse.md)
@@ -43,34 +42,37 @@ Dự án này là sự kết hợp sâu sắc và nghiêm ngặt giữa ba trụ
 
 ---
 
-## 🚀 Điểm Mới Nổi Bật Ở Bản V1.0.2 (Chống Rập Khuôn & Đa Dạng Giọng Văn)
+## 🎭 Chống Rập Khuôn Mẫu: Đa Dạng Hóa Giọng Văn & Lập Trường Tu Từ
 
-Phiên bản `v1.0.2` phá bỏ hoàn toàn cái bẫy "100 bài như 1" (chống rập khuôn mẫu) và bổ sung chế độ cấp cứu khẩn cấp cho deadline:
+Để phá vỡ hoàn toàn cái bẫy "100 bài như 1" (tránh việc mọi bài báo đều bị ép vào một khuôn mẫu cứng nhắc), `Write-Paper-Like-a-Human` áp dụng **4 Lập trường Tu từ (4 Rhetorical Stances)** trong `references/diversity-and-voice.md`:
 
-### 1. Phá Vỡ Rập Khuôn (4 Lập Trường Tu Từ Đa Dạng - Anti-Meta-Clustering)
-Việc ép mọi bài báo vào cùng một bộ khung dẫn đến hiện tượng bài nào cũng giống bài nào. Bản v1.0.2 giới thiệu **4 Lập trường Tu từ (4 Rhetorical Stances)** và **3 Nhân dạng Tác giả (3 Authorial Personas)** trong `references/diversity-and-voice.md`:
-- **The Empirical Conflict Stance (Dữ liệu thực nghiệm đi trước)**: Khởi đầu bằng một hiện tượng đo đạc bất thường hoặc sự sụp đổ của giả định cũ trước dữ liệu thực tế. Phù hợp cho bài phát hiện lỗi, đo đạc, benchmark mới.
-- **The Theoretical Paradox Stance (Nguyên lý lý thuyết đi trước)**: Khởi đầu bằng sự phức tạp của công thức cũ và giải quyết bằng định lý tương đương giải tích (*analytical equivalence*). Phù hợp cho bài toán tối ưu, reparameterization (như DPO).
-- **The Systems Pragmatism Stance (Ràng buộc hệ thống & phần cứng)**: Khởi đầu bằng nút thắt cổ chai phần cứng (tràn VRAM, trễ suy luận) và chứng minh sự vượt trội trên đường cong Pareto hiệu năng/tốc độ. Phù hợp cho mô hình thời gian thực, nén mô hình.
-- **The Historical Linchpin Stance (Tiến trình lịch sử & Mắt xích còn thiếu)**: Khái quát 3 giai đoạn tiến hóa của phân ngành và chỉ ra đúng mắt xích còn khuyết để thống nhất các phương pháp. Phù hợp cho mô hình nền tảng đa nhiệm.
-- **3 Nhân dạng tác giả**: Giọng văn chuyên biệt cho *Nhà lý thuyết (The Theorist)*, *Nhà quan sát thực nghiệm (The Naturalist)*, và *Kiến trúc sư hệ thống (The Systems Architect)*.
+1. **The Empirical Conflict Stance (Dữ liệu thực nghiệm đi trước)**:
+   - *Phù hợp*: Hiện tượng bất thường, phân tích lỗi, phân phối trượt, benchmark mới.
+   - *Cấu trúc*: Khởi đầu bằng một số liệu đo đạc thực nghiệm bất thường/nghịch lý khiến các giả định thông thường sụp đổ trên dữ liệu thực tế.
+2. **The Theoretical Paradox Stance (Nguyên lý lý thuyết đi trước)**:
+   - *Phù hợp*: Tối ưu hóa, reparameterization, chứng minh nền tảng.
+   - *Cấu trúc*: Khởi đầu bằng sự cồng kềnh của công thức cũ và giải quyết bằng định lý tương đương giải tích (*analytical equivalence*).
+3. **The Systems Pragmatism Stance (Ràng buộc hệ thống & phần cứng)**:
+   - *Phù hợp*: Mô hình thời gian thực, nén mô hình, kiến trúc tiết kiệm bộ nhớ.
+   - *Cấu trúc*: Khởi đầu bằng nút thắt cổ chai phần cứng (tràn VRAM, trễ suy luận) và chứng minh sự vượt trội trên đường cong Pareto.
+4. **The Historical Linchpin Stance (Tiến trình lịch sử & Mắt xích còn thiếu)**:
+   - *Phù hợp*: Mô hình nền tảng đa nhiệm, phương pháp hợp nhất nhiều nhánh nghiên cứu.
+   - *Cấu trúc*: Khái quát 3 giai đoạn tiến hóa của phân ngành và chỉ ra đúng mắt xích còn khuyết để thống nhất các phương pháp.
 
-### 2. Hai Chế Độ Vận Hành: Kiến Trúc Sư vs. Cấp Cứu Deadline (`--triage`)
-- **Chế độ Kiến trúc sư (Gear 1)**: Quy trình chuẩn 8 bước sâu sắc để xây dựng bài báo từ đầu.
-- **Chế độ Cấp cứu khẩn cấp (Gear 2)**: Khi chỉ còn <24–48 giờ trước giờ nộp bài (*deadline panic*):
+Đi kèm **3 Nhân dạng Tác giả (Authorial Personas)**: Giọng văn chuyên biệt cho *Nhà lý thuyết (The Theorist)*, *Nhà quan sát thực nghiệm (The Naturalist)*, và *Kiến trúc sư hệ thống (The Systems Architect)*.
+
+---
+
+## ⚙️ Hai Chế Độ Vận Hành: Kiến Trúc Sư vs. Cấp Cứu Deadline
+
+Tùy theo mốc thời gian nộp bài, hệ thống cung cấp 2 chế độ vận hành linh hoạt:
+
+- **Chế độ Kiến trúc sư (Gear 1: Architect Mode)**: Quy trình chuẩn 8 bước sâu sắc để xây dựng bản thảo từ đầu đến bản LaTeX hoàn chỉnh.
+- **Chế độ Cấp cứu Deadline (`--triage`)**: Dành cho tác giả có sẵn bản thảo và chỉ còn <24–48 giờ trước giờ đóng cổng nộp bài:
   ```bash
   python scripts/check_draft.py --triage draft_intro.tex
   ```
   Quét nhanh trong 3 phút: thanh trừng các tử huyệt AI (`delve`, `pivotal`, `seamless`, gạch ngang `—`), đo độ đa dạng nhịp điệu câu ($\sigma_{\text{length}}$), kiểm tra số liệu định lượng, và xuất kế hoạch sửa nhanh 4 bước.
-
-### 3. Miễn Trừ Dương Tính Giả Cho Thuật Ngữ Toán Học & Khoa Học
-Nâng cấp bộ nhận diện regex trong `check_draft.py` để phân biệt ngữ cảnh:
-- Cho phép sử dụng từ `landscape` trong các khái niệm khoa học chuẩn xác (*loss landscape*, *optimization landscape*, *energy landscape*, *fitness landscape*).
-- Cho phép dùng từ *prove/proof* trong chứng minh định lý toán học (*Mathematical Theorems*) mà không bị phạt nhầm.
-
-### 4. Đấu Tranh Giả Định Trong Related Work & Kịch Bản Phản Biện (Rebuttal)
-- **Related Work** (`references/related-work.md`): Cấu trúc phần nghiên cứu liên quan thành một "Cuộc chiến của các giả định kỹ thuật" (*Battle of Assumptions*) thay vì liệt kê theo thứ tự thời gian buồn ngủ.
-- **Kịch bản Rebuttal** (`references/rebuttal.md`): Giao thức phản biện reviewer sắc bén, đi thẳng vào câu trả lời và số liệu thực nghiệm ngay từ dòng đầu tiên, không nịnh bợ hay xin xỏ rỗng tuếch.
 
 ---
 
