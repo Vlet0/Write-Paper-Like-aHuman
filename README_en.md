@@ -12,7 +12,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-8A63D2.svg)](.claude-plugin/plugin.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Plugin-000000.svg)](.cursor-plugin/plugin.json)
 
-[🇻🇳 Tiếng Việt (README.md)](README.md) · [60 Award Paper Corpus](PAPER_LIST.md) · [Changelog](CHANGELOG.md) · [Notice & Citations](NOTICE.md)
+[🌐 English](README.md) · [🇻🇳 Tiếng Việt](README_vi.md) · [60 Award Paper Corpus](PAPER_LIST.md) · [Changelog](CHANGELOG.md) · [Notice & Citations](NOTICE.md)
 
 </div>
 
