@@ -46,16 +46,15 @@ Do not write ungrounded prose before Step 4.
 
 ```mermaid
 flowchart TD
-    Step0["Step 0: Research Intake (Intake Brief / Reverse-Engineering)"] --> Step1["Step 1: Scientific Positioning (Claim, Tension, Insight, Handle, Numbers)"]
-    Step1 --> Step2["Step 2: Paper Routing (L1–L8 Paper Types & Motivation Modes)"]
-    Step2 --> Step3["Step 3: Claim Calibration & Evidence Mapping (Evidence-to-Claim Hierarchy)"]
-    Step3 --> Step4["Step 4: Discourse Architecture & Skeleton (Anti-Thematic Preaching & Pivots)"]
-    Step4 --> Step5["Step 5: Drafting with Exemplars (60 Award Paper Corpus)"]
-    Step5 --> Step5b["Step 5b: Method (Need → Mechanism → Property) & Experiments Execution"]
-    Step5b --> Step5c["Step 5c: Strategic Figure Planning & Vector Production (TikZ / matplotlib)"]
-    Step5c --> Step6["Step 6: The Full-Spectrum 26-Pattern De-AI Scrub (Humanizer Pass)"]
-    Step6 --> Step7["Step 7: Automated Mechanical Verification (check_draft.py, check_figures.py)"]
-    Step7 --> Step8["Step 8: Final Delivery (Publication LaTeX Template + Strategic report.md)"]
+    subgraph Row1 ["Phase 1: Scientific Positioning and Narrative Architecture"]
+        direction LR
+        S0["<b>Step 0: Intake</b><br/>JSON Form / Reverse-Eng"] --> S1["<b>Step 1: Positioning</b><br/>Claim, Tension, Insight"] --> S2["<b>Step 2: Routing</b><br/>L1–L8 Paper Archetypes"] --> S3["<b>Step 3: Calibration</b><br/>Evidence-to-Claim Map"] --> S4["<b>Step 4: Skeleton</b><br/>Discourse Arc and Pivots"]
+    end
+    subgraph Row2 ["Phase 2: Exemplar Drafting, De-AI Scrubbing and Verification"]
+        direction LR
+        S5["<b>Step 5: Exemplars</b><br/>60 Award-Paper Moves"] --> S5bc["<b>Step 5b/c: Method and Figures</b><br/>Need-Mech-Prop / TikZ"] --> S6["<b>Step 6: De-AI Scrub</b><br/>26 Tells and StoryScope"] --> S7["<b>Step 7: Verification</b><br/>check_draft.py and Figures"] --> S8["<b>Step 8: Delivery</b><br/>CVPR LaTeX + report.md"]
+    end
+    S4 --> S5
 ```
 
 ### Step 0 — Research Intake & Briefing

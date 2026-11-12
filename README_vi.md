@@ -46,16 +46,15 @@ Tuyệt đối không viết văn xuôi khi chưa hoàn thành Bước 3.
 
 ```mermaid
 flowchart TD
-    Step0["Bước 0: Tiếp nhận nghiên cứu (Intake Brief / Reverse-Engineering)"] --> Step1["Bước 1: Định vị khoa học (Claim, Tension, Insight, Handle, Numbers)"]
-    Step1 --> Step2["Bước 2: Phân luồng bài báo (L1–L8 Paper Types & Motivation Modes)"]
-    Step2 --> Step3["Bước 3: Hiệu chuẩn luận điểm & Ánh xạ bằng chứng (Claim Calibration)"]
-    Step3 --> Step4["Bước 4: Kiến trúc tự sự & Dàn ý diễn ngôn (Discourse Skeleton & Pivots)"]
-    Step4 --> Step5["Bước 5: Soạn thảo với kho mẫu Exemplars (60 Award Papers Corpus)"]
-    Step5 --> Step5b["Bước 5b: Triển khai Method (Need → Mechanism → Property) & Experiments"]
-    Step5b --> Step5c["Bước 5c: Quy hoạch & Thiết kế hình ảnh (Figure 1 & TikZ Vector Schematics)"]
-    Step5c --> Step6["Bước 6: Quét sạch 26 dấu hiệu AI & StoryScope Tells (Humanizer Scrub)"]
-    Step6 --> Step7["Bước 7: Kiểm định cơ học tự động (check_draft.py, check_figures.py)"]
-    Step7 --> Step8["Bước 8: Bàn giao sản phẩm (LaTeX CVPR/IEEE Template + report.md)"]
+    subgraph Row1 ["Giai đoạn 1: Định vị khoa học và Kiến trúc tự sự"]
+        direction LR
+        S0["<b>Bước 0: Tiếp nhận</b><br/>Form JSON / Tách nháp"] --> S1["<b>Bước 1: Định vị</b><br/>Claim, Tension, Insight"] --> S2["<b>Bước 2: Phân luồng</b><br/>8 Dạng bài L1–L8"] --> S3["<b>Bước 3: Hiệu chuẩn</b><br/>Ánh xạ bằng chứng"] --> S4["<b>Bước 4: Dàn ý diễn ngôn</b><br/>Cấu trúc 5 đoạn và Pivots"]
+    end
+    subgraph Row2 ["Giai đoạn 2: Soạn thảo, Khử dấu vết AI và Kiểm định"]
+        direction LR
+        S5["<b>Bước 5: Kho mẫu</b><br/>60 Bài báo Best Paper"] --> S5bc["<b>Bước 5b/c: Method và Figures</b><br/>Need-Mech-Prop / TikZ"] --> S6["<b>Bước 6: Khử dấu vết AI</b><br/>26 Tells và StoryScope"] --> S7["<b>Bước 7: Kiểm định</b><br/>check_draft.py tự động"] --> S8["<b>Bước 8: Bàn giao</b><br/>LaTeX CVPR + report.md"]
+    end
+    S4 --> S5
 ```
 
 ### Bước 0 — Tiếp Nhận Nghiên Cứu (Intake)
