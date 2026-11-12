@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions, ideas, and discussions
+    url: https://github.com/Vlet0/Write-Paper-Like-aHuman/discussions
+    about: Ask how to use Write-Paper-Like-a-Human, share paper drafts, or discuss patterns.
+  - name: Scientific Paper Writing & Reviewer Guidelines
+    url: https://github.com/Vlet0/Write-Paper-Like-aHuman#readme
+    about: Review our 8-step pipeline, 26 anti-AI tell patterns, and StoryScope discourse rules.

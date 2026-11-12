@@ -1,0 +1,6 @@
+interface:
+  display_name: "Write-Paper-Like-a-Human"
+  short_description: "Draft, rewrite, and audit CVPR/ICCV/NeurIPS best-paper style papers with rigorous de-AI humanization"
+  default_prompt: "Use $write-paper-like-a-human to draft, rewrite, or humanize this academic paper."
+policy:
+  allow_implicit_invocation: true

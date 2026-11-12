@@ -1,0 +1,23 @@
+{
+  "name": "write-paper-like-a-human",
+  "description": "Draft, rewrite, and audit high-impact academic papers combining best-paper narrative architecture with rigorous de-AI humanization.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vlet0",
+    "url": "https://github.com/Vlet0"
+  },
+  "homepage": "https://github.com/Vlet0/Write-Paper-Like-aHuman",
+  "repository": "https://github.com/Vlet0/Write-Paper-Like-aHuman",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "academic",
+    "research",
+    "paper",
+    "cvpr",
+    "neurips",
+    "iccv",
+    "humanize",
+    "scientific-writing"
+  ]
+}

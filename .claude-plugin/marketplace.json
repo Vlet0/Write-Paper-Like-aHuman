@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "write-paper-like-a-human",
+  "owner": {
+    "name": "Vlet0",
+    "url": "https://github.com/Vlet0"
+  },
+  "description": "Install Write-Paper-Like-a-Human as a Claude plugin.",
+  "plugins": [
+    {
+      "name": "write-paper-like-a-human",
+      "source": "./",
+      "description": "Draft, rewrite, and audit high-impact academic papers combining best-paper narrative architecture with rigorous de-AI humanization.",
+      "license": "MIT",
+      "keywords": [
+        "writing",
+        "academic",
+        "research",
+        "paper",
+        "cvpr",
+        "neurips",
+        "iccv",
+        "humanize",
+        "scientific-writing"
+      ]
+    }
+  ]
+}
