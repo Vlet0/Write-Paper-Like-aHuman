@@ -46,3 +46,39 @@ We gratefully acknowledge the following upstream projects, empirical corpora, an
     * *Intertextual Richness & Concrete Attribution* (naming exact prior mechanisms).
     * *Authentic Technical Friction* (demonstrating why obvious solutions fail with quantified cost).
     * *Non-Linear Insight & Delayed Recontextualization* (structuring the technical epiphany so it recontextualizes the bottleneck).
+
+---
+
+## BibTeX References
+
+```bibtex
+@software{write_paper_like_a_human2026,
+  author = {Vlet0 and Contributors},
+  title = {{Write-Paper-Like-a-Human}: High-Impact Best-Paper Architecture and Rigorous Scientific De-AI Humanization},
+  year = {2026},
+  url = {https://github.com/Vlet0/Write-Paper-Like-aHuman},
+  license = {MIT and CC-BY-4.0}
+}
+
+@software{best_paper_writing_skill2025,
+  author = {gulucaptain and Master-cai and Peng, Sida},
+  title = {{Best-Paper-Writing-Skill}: Writing patterns distilled from 60 award papers},
+  year = {2025},
+  url = {https://github.com/gulucaptain/Best-Paper-Writing-Skill}
+}
+
+@software{humanizer2025,
+  author = {Chen, Siqi},
+  title = {Humanizer: Rewrite AI-sounding text so it reads like the writer},
+  year = {2025},
+  url = {https://github.com/blader/humanizer}
+}
+
+@inproceedings{russell2026storyscope,
+  title = {{StoryScope}: Investigating idiosyncrasies in {AI} fiction},
+  author = {Russell, Jenna and Rajendhran, Rishanth and Pham, Chau Minh and Iyyer, Mohit and Wieting, John},
+  booktitle = {Conference on Language Modeling (COLM)},
+  year = {2026},
+  url = {https://arxiv.org/abs/2604.03136}
+}
+```

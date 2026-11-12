@@ -203,12 +203,81 @@ python scripts/validate-package.py
 
 ---
 
+---
+
+## 📚 References & Upstream Projects
+
+This framework synthesizes and builds upon the collective wisdom of foundational open-source projects, linguistic initiatives, and empirical deep learning research:
+
+1. **Best-Paper-Writing-Skill**
+   - **Repository**: [gulucaptain/Best-Paper-Writing-Skill](https://github.com/gulucaptain/Best-Paper-Writing-Skill)
+   - **Authors**: gulucaptain, Master-cai ([Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills)), Peng Sida ([learning_research](https://github.com/pengsida/learning_research)).
+   - **Contribution**: Sentence-by-sentence annotation and rhetorical distillation of 60 award-winning papers from CVPR, ICCV, and NeurIPS (2021–2025); the 8-type paper routing taxonomy, claim calibration methodology, and Figure 1 planning.
+   - **License**: Creative Commons Attribution 4.0 International (CC BY 4.0) & MIT.
+
+2. **Humanizer**
+   - **Repository**: [blader/humanizer](https://github.com/blader/humanizer)
+   - **Author**: Siqi Chen ([@blader](https://github.com/blader)), sponsored by [cfo.ai](https://cfo.ai).
+   - **Foundation**: Built upon Wikipedia's community-driven [WikiProject AI Cleanup: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).
+   - **Contribution**: The 26 anti-AI tell patterns, factual preservation invariants, sentence burstiness engineering, and strict prohibition of universal connectors and em-dashes (`—`).
+   - **License**: MIT License.
+
+3. **StoryScope (COLM 2026)**
+   - **Paper**: *"StoryScope: Investigating idiosyncrasies in AI fiction"*, Conference on Language Modeling (COLM 2026), arXiv:2604.03136v6.
+   - **Authors**: Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, John Wieting (University of Maryland, College Park & Google DeepMind).
+   - **Contribution**: Empirical demonstration that >97% of AI detection signal resides in discourse-level narrative architecture; formulation of anti-thematic over-determination, technical friction, and operational agency.
+
+---
+
+## 🙏 Acknowledgments & Gratitude
+
+We express our deepest gratitude to:
+- **gulucaptain**, **Master-cai**, and **Peng Sida** for their monumental effort in dissecting 60 top-tier award-winning papers and open-sourcing the structural blueprints that empower researchers to argue with clarity and rigor.
+- **Siqi Chen (blader)** and the **Wikipedia WikiProject AI Cleanup** volunteers for codifying the subtle linguistic tells of generative language models into actionable editing rules, fighting the tide of synthetic slop.
+- **Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, and John Wieting** (UMD & Google DeepMind) for their pioneering research into narrative idiosyncrasies and discourse-level detection in AI writing.
+- **The global machine learning and scientific community** (CVPR, ICCV, NeurIPS, ICML, COLM) for maintaining the highest standards of peer review, intellectual honesty, and reproducible scholarship.
+
+---
+
 ## 📜 License & Citation
 
 This project is released under a clear dual-licensing model:
 - 💻 **Software, Scripts, and Templates (`scripts/`, `template/`)**: Licensed under the **[MIT License](LICENSE)**.
 - 📖 **Documentation, Prompts, and Reference Guides (`references/`, `SKILL.md`)**: Licensed under the **[Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)**.
 - 💡 **Acknowledgments**: See [`NOTICE.md`](NOTICE.md) for detailed attribution to `Best-Paper-Writing-Skill`, `humanizer`, and `StoryScope` (COLM 2026).
+
+### BibTeX Citation
+```bibtex
+@software{write_paper_like_a_human2026,
+  author = {Vlet0 and Contributors},
+  title = {{Write-Paper-Like-a-Human}: High-Impact Best-Paper Architecture and Rigorous Scientific De-AI Humanization},
+  year = {2026},
+  url = {https://github.com/Vlet0/Write-Paper-Like-aHuman},
+  license = {MIT and CC-BY-4.0}
+}
+
+@software{best_paper_writing_skill2025,
+  author = {gulucaptain and Master-cai and Peng, Sida},
+  title = {{Best-Paper-Writing-Skill}: Writing patterns distilled from 60 award papers},
+  year = {2025},
+  url = {https://github.com/gulucaptain/Best-Paper-Writing-Skill}
+}
+
+@software{humanizer2025,
+  author = {Chen, Siqi},
+  title = {Humanizer: Rewrite AI-sounding text so it reads like the writer},
+  year = {2025},
+  url = {https://github.com/blader/humanizer}
+}
+
+@inproceedings{russell2026storyscope,
+  title = {{StoryScope}: Investigating idiosyncrasies in {AI} fiction},
+  author = {Russell, Jenna and Rajendhran, Rishanth and Pham, Chau Minh and Iyyer, Mohit and Wieting, John},
+  booktitle = {Conference on Language Modeling (COLM)},
+  year = {2026},
+  url = {https://arxiv.org/abs/2604.03136}
+}
+```
 
 ---
 

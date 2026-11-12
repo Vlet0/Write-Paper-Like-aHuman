@@ -288,12 +288,81 @@ Write-Paper-Like-aHuman/
 
 ---
 
+---
+
+## 📚 Nguồn Tham Khảo & Các Kho Mã Nguồn Thượng Nguồn
+
+Khung phương pháp này được kế thừa và xây dựng dựa trên sự kết tinh của các dự án nguồn mở, sáng kiến ngôn ngữ và nghiên cứu học thuật hàng đầu:
+
+1. **Best-Paper-Writing-Skill**
+   - **Kho mã nguồn**: [gulucaptain/Best-Paper-Writing-Skill](https://github.com/gulucaptain/Best-Paper-Writing-Skill)
+   - **Tác giả**: gulucaptain, Master-cai ([Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills)), Peng Sida ([learning_research](https://github.com/pengsida/learning_research)).
+   - **Đóng góp**: Phân tích giải phẫu từng câu chữ từ 60 bài báo đoạt giải thưởng lớn tại CVPR, ICCV, NeurIPS (2021–2025); định hình 8 luồng bài báo (L1–L8), kỹ thuật hiệu chuẩn luận điểm (Claim Calibration) và thiết kế Figure 1.
+   - **Giấy phép**: Creative Commons Attribution 4.0 International (CC BY 4.0) & MIT.
+
+2. **Humanizer**
+   - **Kho mã nguồn**: [blader/humanizer](https://github.com/blader/humanizer)
+   - **Tác giả**: Siqi Chen ([@blader](https://github.com/blader)), tài trợ bởi [cfo.ai](https://cfo.ai).
+   - **Nền tảng**: Dự án làm sạch văn bản AI của cộng đồng biên tập viên Wikipedia [WikiProject AI Cleanup: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).
+   - **Đóng góp**: Hệ thống 26 mẫu dấu hiệu nhận diện văn bản AI, nguyên tắc bảo toàn tuyệt đối 100% sự thật khoa học, kỹ thuật tạo nhịp điệu đột phá (burstiness) và lệnh cấm triệt để dấu gạch ngang (`—`).
+   - **Giấy phép**: MIT License.
+
+3. **StoryScope (COLM 2026)**
+   - **Bài báo**: *"StoryScope: Investigating idiosyncrasies in AI fiction"*, Conference on Language Modeling (COLM 2026), arXiv:2604.03136v6.
+   - **Tác giả**: Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, John Wieting (Đại học Maryland & Google DeepMind).
+   - **Đóng góp**: Chứng minh thực nghiệm rằng hơn 97% tín hiệu phát hiện AI nằm ở cấu trúc tự sự diễn ngôn; thiết lập kỷ luật triệt tiêu thói quen thuyết giảng (thematic moralizing), tôn trọng va chạm kỹ thuật và gán chủ thể cơ học.
+
+---
+
+## 🙏 Lời Cảm Ơn & Tri Ân Sâu Sắc
+
+Chúng tôi xin gửi lời cảm ơn và tri ân chân thành nhất tới:
+- **gulucaptain**, **Master-cai**, và **Peng Sida** vì những nỗ lực to lớn trong việc phân tích 60 bài báo xuất sắc nhất và mã nguồn mở những cấu trúc mẫu mực, giúp các nhà nghiên cứu trẻ biết cách bảo vệ luận điểm khoa học một cách thuyết phục.
+- **Siqi Chen (blader)** cùng **cộng đồng biên tập viên Wikipedia WikiProject AI Cleanup** vì đã hệ thống hóa các dấu hiệu ngôn ngữ của AI thành 26 quy tắc biên tập sắc bén, góp phần giữ gìn sự trong sáng của văn phong viết.
+- **Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, và John Wieting** (UMD & Google DeepMind) vì công trình nghiên cứu tiên phong StoryScope, mở ra cái nhìn sâu sắc về cấu trúc diễn ngôn của các mô hình ngôn ngữ lớn.
+- **Cộng đồng học thuật và trí tuệ nhân tạo toàn cầu** (CVPR, ICCV, NeurIPS, ICML, COLM) vì luôn duy trì các tiêu chuẩn phản biện đồng cấp khắt khe, đề cao tính liêm chính và sự chân thực của khoa học.
+
+---
+
 ## 📜 Bản Quyền & Giấy Phép (License)
 
 Dự án áp dụng mô hình giấy phép kép minh bạch:
 - 💻 **Phần mềm, mã nguồn và công cụ (`scripts/`, `template/`)**: Được phát hành theo giấy phép **[MIT License](LICENSE)**. Tự do sử dụng, chỉnh sửa và tích hợp vào bất kỳ dự án học thuật hoặc thương mại nào.
 - 📖 **Tài liệu nghiên cứu, hướng dẫn, prompt và dữ liệu phân tích (`references/`, `SKILL.md`)**: Được phát hành theo giấy phép **[Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)**.
 - 💡 **Ghi công chi tiết**: Xin vui lòng xem file [`NOTICE.md`](NOTICE.md) để biết thông tin chi tiết về các dự án thượng nguồn (`Best-Paper-Writing-Skill`, `humanizer`, `StoryScope COLM 2026`).
+
+### Trích Dẫn BibTeX (Citation)
+```bibtex
+@software{write_paper_like_a_human2026,
+  author = {Vlet0 and Contributors},
+  title = {{Write-Paper-Like-a-Human}: High-Impact Best-Paper Architecture and Rigorous Scientific De-AI Humanization},
+  year = {2026},
+  url = {https://github.com/Vlet0/Write-Paper-Like-aHuman},
+  license = {MIT and CC-BY-4.0}
+}
+
+@software{best_paper_writing_skill2025,
+  author = {gulucaptain and Master-cai and Peng, Sida},
+  title = {{Best-Paper-Writing-Skill}: Writing patterns distilled from 60 award papers},
+  year = {2025},
+  url = {https://github.com/gulucaptain/Best-Paper-Writing-Skill}
+}
+
+@software{humanizer2025,
+  author = {Chen, Siqi},
+  title = {Humanizer: Rewrite AI-sounding text so it reads like the writer},
+  year = {2025},
+  url = {https://github.com/blader/humanizer}
+}
+
+@inproceedings{russell2026storyscope,
+  title = {{StoryScope}: Investigating idiosyncrasies in {AI} fiction},
+  author = {Russell, Jenna and Rajendhran, Rishanth and Pham, Chau Minh and Iyyer, Mohit and Wieting, John},
+  booktitle = {Conference on Language Modeling (COLM)},
+  year = {2026},
+  url = {https://arxiv.org/abs/2604.03136}
+}
+```
 
 ---
 
